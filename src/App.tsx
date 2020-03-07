@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/about" component={loadsh(() => import('./view/AboutView'))}></Route>
           <Route exact path="/news" component={loadsh(() => import('./view/NewsView'))}></Route>
           <Route exact path="/download" component={loadsh(() => import('./view/DownLoadView'))}></Route>
+          <Route exact path="/404" component={loadsh(() => import('./view/404'))}></Route>
         </Switch>
       </HashRouter>
     </div>
