@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Switch, Redirect, Route } from 'react-router-dom'
+import LoadingComponent from './components/LoadingComponent';
+import Loadable from 'react-loadable';
+
+import './App.scss';
+
+const loadsh = function (loader: any) {
+  return Loadable({
+    loader,
+    loading: LoadingComponent
+  });
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HashRouter>
+        <Switch>
+          <Redirect exact from="/" to="/home"></Redirect>
+          <Route exact path="/home" component={loadsh(() => import('./view/HomeView'))}></Route>
+          <Route exact path="/about" component={loadsh(() => import('./view/AboutView'))}></Route>
+          <Route exact path="/news" component={loadsh(() => import('./view/NewsView'))}></Route>
+          <Route exact path="/download" component={loadsh(() => import('./view/DownLoadView'))}></Route>
+        </Switch>
+      </HashRouter>
     </div>
   );
 }

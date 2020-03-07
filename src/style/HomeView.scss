@@ -1,0 +1,146 @@
+@import "../assets//source.scss";
+
+.Home {
+    background-color: $color-black;
+
+    .frame {
+        min-height: 100vh;
+    }
+
+    .frame1 {
+        overflow: hidden;
+        height: 100vh;
+        position: relative;
+        color: $color-white;
+
+        @media(min-width: 901px) {
+            .header {
+                width: 60%;
+                margin: 2vh auto;
+                display: flex;
+                flex-direction: row;
+
+                >.icon {
+                    height: 50px;
+                    width: 50px;
+                }
+
+                >ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin: 0;
+                }
+            }
+        }
+
+        @media(max-width: 901px) {
+            .header {
+                position: absolute;
+                height: 100vh;
+                width: 100%;
+
+                >.icon {
+                    height: 50px;
+                    width: 50px;
+                }
+
+                >ul {
+                    padding: 0;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin: 0;
+                    transform: rotate(-90deg) translateY(50%);
+                    transform-origin: left top;
+
+                }
+            }
+        }
+
+        .link {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 10px;
+
+            &.action {
+                text-decoration: underline;
+            }
+        }
+
+        .center {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .text {
+            text-align: center;
+            font-size: 4rem;
+
+            @media(max-width: 900px) {
+                font-size: 2rem;
+            }
+        }
+
+        .download-frame {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .frame-main,
+        .background,
+        .background-model,
+        .background-model2 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .frame-main {
+            z-index: 4;
+        }
+
+        .background-model2 {
+            z-index: 3;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 10rem;
+            font-weight: bold;
+            user-select: none;
+            color: rgba($color: $color-white, $alpha: .12);
+
+            @media(max-width: 900px) {
+                font-size: 5rem;
+            }
+        }
+
+        .background-model {
+            z-index: 2;
+            background-color: rgba($color: #000000, $alpha: .5);
+        }
+
+        .background {
+            z-index: 1;
+            background-image: url(../assets/wallhaven-13m9z9-size1920.jpg);
+            background-size: cover;
+        }
+    }
+
+    .download {
+        border-color: $color-white;
+        color: $color-white;
+    }
+}
