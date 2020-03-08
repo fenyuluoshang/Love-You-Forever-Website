@@ -1,4 +1,4 @@
-@import "./assets//source.scss";
+@import "./assets/source.scss";
 
 ._btn__sourend {
   border: solid $color-black 2px;
@@ -7,6 +7,11 @@
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba($color: $color-white, $alpha: 0.3);
+  }
 }
 
 .App {
@@ -16,6 +21,10 @@
 a {
   color: inherit;
   text-decoration: none;
+
+  &.line {
+    text-decoration: underline;
+  }
 }
 
 .Loading {
@@ -30,12 +39,11 @@ a {
   .title {
     font-size: 70px;
     animation: App-Loading-title-inner 1 1.5s ease-in-out;
+    margin-bottom: 5vh;
   }
 
   .text {
-    margin-top: 5vh;
     font-size: 30px;
-    // animation: App-Loading infinite 4s linear;
   }
 }
 
@@ -51,6 +59,14 @@ a {
   }
 }
 
+.contine {
+  width: 60%;
+  margin: 0 auto;
+
+  @media(max-width: 900px) {
+    width: 95%;
+  }
+}
 
 // .App-logo {
 //   height: 40vmin;

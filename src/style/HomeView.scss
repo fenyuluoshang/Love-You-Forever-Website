@@ -1,7 +1,12 @@
-@import "../assets//source.scss";
+@import "../assets/source.scss";
 
 .Home {
     background-color: $color-black;
+
+    .bottom {
+        color: rgba($color: $color-white, $alpha: .2);
+        z-index: 4;
+    }
 
     .frame {
         min-height: 100vh;
@@ -13,67 +18,6 @@
         position: relative;
         color: $color-white;
 
-        @media(min-width: 901px) {
-            .header {
-                width: 60%;
-                margin: 2vh auto;
-                display: flex;
-                flex-direction: row;
-
-                >.icon {
-                    height: 50px;
-                    width: 50px;
-                }
-
-                >ul {
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    margin: 0;
-                }
-            }
-        }
-
-        @media(max-width: 901px) {
-            .header {
-                position: absolute;
-                height: 100vh;
-                width: 100%;
-
-                >.icon {
-                    height: 50px;
-                    width: 50px;
-                }
-
-                >ul {
-                    padding: 0;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    margin: 0;
-                    transform: rotate(-90deg) translateY(50%);
-                    transform-origin: left top;
-
-                }
-            }
-        }
-
-        .link {
-            color: inherit;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 10px;
-
-            &.action {
-                text-decoration: underline;
-            }
-        }
-
         .center {
             position: absolute;
             width: 100%;
@@ -82,6 +26,15 @@
         }
 
         .text {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            >div {
+                transition: ease-out 0.8s;
+            }
+
             text-align: center;
             font-size: 4rem;
 

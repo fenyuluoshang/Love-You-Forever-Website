@@ -8,7 +8,7 @@ export default class NotFoundView extends React.Component {
                 <div className="textFrame">
                     <div className="title">404 Not Found</div>
                     <div className="text">
-                        页面不见了，<Link to="/">点我</Link>&nbsp;返回首页
+                        <Link to="/">页面不见了，点我返回首页</Link>
                     </div>
                 </div>
             </div>

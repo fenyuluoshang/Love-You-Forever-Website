@@ -17,12 +17,13 @@ function App() {
     <div className="App">
       <HashRouter>
         <Switch>
-          <Redirect exact from="/" to="/home"></Redirect>
-          <Route exact path="/home" component={loadsh(() => import('./view/HomeView'))}></Route>
-          <Route exact path="/about" component={loadsh(() => import('./view/AboutView'))}></Route>
-          <Route exact path="/news" component={loadsh(() => import('./view/NewsView'))}></Route>
-          <Route exact path="/download" component={loadsh(() => import('./view/DownLoadView'))}></Route>
-          <Route exact path="/404" component={loadsh(() => import('./view/404'))}></Route>
+          <Redirect exact from="/" to="/home"/>
+          <Route exact path="/home" component={loadsh(() => import('./view/HomeView'))}/>
+          <Route exact path="/about" component={loadsh(() => import('./view/AboutView'))}/>
+          <Route exact path="/news" component={loadsh(() => import('./view/NewsView'))}/>
+          <Route exact path="/download" component={loadsh(() => import('./view/DownLoadView'))}/>
+          <Route exact path="/404" component={loadsh(() => import('./view/404'))}/>
+          <Route exact path="/not_open" component={loadsh(() => import('./view/NotOpenView'))}/>
         </Switch>
       </HashRouter>
     </div>

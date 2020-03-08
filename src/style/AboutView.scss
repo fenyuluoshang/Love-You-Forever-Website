@@ -1,0 +1,19 @@
+@import "../assets/source.scss";
+
+.About {
+    position: relative;
+    background-color: $color-black;
+    min-height: calc(100vh - 3rem);
+    color: $color-white;
+    overflow: hidden;
+    padding-bottom: 3rem;
+
+    .bottom {
+        color: rgba($color: $color-white, $alpha: .2);
+    }
+
+    .headimage {
+        width: 100px;
+        height: 100px;
+    }
+}
