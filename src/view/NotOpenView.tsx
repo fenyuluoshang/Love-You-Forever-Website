@@ -38,7 +38,7 @@ export default class NotOpenView extends React.Component {
 
     render() {
         let loading = (<>
-            this page has not open
+            您试图访问的内容尚在开发中
             <i style={{color: this.state.loaditem === 1 ? '#eee' : '#bbb'}}>.</i>
             <i style={{color: this.state.loaditem === 2 ? '#eee' : '#bbb'}}>.</i>
             <i style={{color: this.state.loaditem === 3 ? '#eee' : '#bbb'}}>.</i>

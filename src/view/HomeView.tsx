@@ -5,6 +5,9 @@ import BottomComponment from '../components/Bottom'
 import HomeBackgroundCanvas from '../components/HomeBackgroundCanvas'
 import Header from '../components/Header'
 
+import bgImage from '../assets/wallhaven-13m9z9-size1920.jpg'
+import LoadingComponent from '../components/LoadingComponent'
+
 type viewState = {
     "frame-text": string,
     show: number,
@@ -20,7 +23,6 @@ export default class HomeView extends React.Component<any, viewState> {
             show: -1,
             interval: undefined
         }
-
     }
 
     componentWillMount() {
@@ -77,7 +79,7 @@ export default class HomeView extends React.Component<any, viewState> {
                         </div>
                     </div>
                     <div className="background-model" />
-                    <div className="background">
+                    <div className="background" style={{ backgroundImage: "url(" + bgImage + ")" }} >
                         <HomeBackgroundCanvas />
                     </div>
                     <BottomComponment className="bottom" absoult={true} />
