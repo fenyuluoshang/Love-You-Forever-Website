@@ -35,7 +35,6 @@ export default class AboutView extends React.Component<any, any> {
                             </ul>
                         </p>
                     </div>
-
                 </div>
                 <BottomComponment className="bottom" absoult={true} />
             </div>

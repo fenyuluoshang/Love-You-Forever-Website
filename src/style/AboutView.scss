@@ -16,4 +16,19 @@
         width: 100px;
         height: 100px;
     }
+
+    @media(max-width: 900px) {
+        display: flex;
+        flex-direction: row;
+
+        .contine {
+            margin: 0 2px;
+        }
+    }
+
+    .text {
+        ul {
+            padding-left: 1.1rem;
+        }
+    }
 }
