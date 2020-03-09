@@ -5,8 +5,7 @@ import BottomComponment from '../components/Bottom'
 import HomeBackgroundCanvas from '../components/HomeBackgroundCanvas'
 import Header from '../components/Header'
 
-import bgImage from '../assets/wallhaven-13m9z9-size1920.jpg'
-import LoadingComponent from '../components/LoadingComponent'
+import bgImage from '../assets/wallhaven-13m9z9-size1280.jpg'
 
 type viewState = {
     "frame-text": string,

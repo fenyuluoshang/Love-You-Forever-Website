@@ -3,7 +3,7 @@ import { HashRouter, Switch, Redirect, Route } from 'react-router-dom'
 import LoadingComponent from './components/LoadingComponent';
 import Loadable from 'react-loadable';
 
-import bgImage from './assets/wallhaven-13m9z9-size1920.jpg'
+import bgImage from './assets/wallhaven-13m9z9-size1280.jpg'
 import './App.scss';
 
 const loadsh = function (loader: any) {
