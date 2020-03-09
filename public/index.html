@@ -28,27 +28,6 @@
     <!--
       WebGL printer here
     -->
-
-
-    <script id="vertex" type="x-shader/x_vertex">
-    precision highp float;
-    attribute vec3 position;
-    uniform mat4 mat;
-    varying vec4 color;
-    void main(){
-      gl_Position=mat*vec4(position,1.0);
-      color=vec4(gl_Position.x,gl_Position.y,gl_Position.z,0.8);
-    }
-    </script>
-    <script id="fragment" type="x-shader/f-shader">
-      #ifdef GL_ES
-          precision mediump float;
-      #endif
-          varying vec4 color;
-          void main(){
-              gl_FragColor=color;
-          }
-    </script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
