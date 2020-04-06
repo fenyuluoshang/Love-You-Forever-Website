@@ -20,23 +20,23 @@ export default class AboutView extends React.Component<any, any> {
                     </div>
                     <div>
                         <h3>开发成员</h3>
+                        <h4>Unity喵</h4>
+                        <img className="headimage" alt="UnityMeow" src="https://avatars3.githubusercontent.com/u/51852307?s=100"></img>
                         <p>
-                            <h5>Unity喵</h5>
-                            <img className="headimage" alt="UnityMeow" src="https://avatars3.githubusercontent.com/u/51852307?s=100"></img>
-                            <br />
                             主要开发者
-                            <ul>
-                                <li>
-                                    GitHub:&nbsp;<a className="line" href="https://github.com/UnityMeow/">https://github.com/UnityMeow/</a>
-                                </li>
-                                <li>
-                                    bilibili:&nbsp;<a className="line" href="https://space.bilibili.com/297963380/">Unity喵</a>
-                                </li>
-                            </ul>
                         </p>
+                        <ul>
+                            <li>
+                                GitHub:&nbsp;<a className="line" href="https://github.com/UnityMeow/">https://github.com/UnityMeow/</a>
+                            </li>
+                            <li>
+                                bilibili:&nbsp;<a className="line" href="https://space.bilibili.com/297963380/">Unity喵</a>
+                            </li>
+                        </ul>
+
                     </div>
+                    <BottomComponment className="bottom" absoult={false} />
                 </div>
-                <BottomComponment className="bottom" absoult={true} />
             </div>
         )
     }

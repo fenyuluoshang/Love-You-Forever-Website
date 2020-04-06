@@ -1,17 +1,11 @@
 import React from 'react'
 
-interface LoadingComponentProps {
-    total: number,
-    ready: number,
-    error: boolean
-}
-
 /**
  * page for loading
  * 
  * @author 纷羽
  */
-export default class LoadingComponent extends React.Component<LoadingComponentProps> {
+export default class RouteLoadingComponent extends React.Component<any, any> {
 
     public state = {
         loaditem: 1,
@@ -34,30 +28,19 @@ export default class LoadingComponent extends React.Component<LoadingComponentPr
     }
 
     render() {
-        if (this.props.error) {
-            return (
-                <div className="Loading">
-                    <div className="textFrame">
-                        <div className="title">Love You Forever</div>
-                        <div className="text" dangerouslySetInnerHTML={{
-                            __html: "load failed with something error , pleasa <a href=\"javascript:window.location.reload();\" class=\"line\">refresh</a> and try again"
-                        }} />
-                    </div>
-                </div>
-            )
-        }
         let loading = (<div className="text">
-            loading
+            routing
             <i style={{ color: this.state.loaditem === 1 ? '#eee' : '#bbb' }}>.</i>
             <i style={{ color: this.state.loaditem === 2 ? '#eee' : '#bbb' }}>.</i>
             <i style={{ color: this.state.loaditem === 3 ? '#eee' : '#bbb' }}>.</i>
         </div>)
+        let error = (<div className="text">load failed , please refresh and try again</div>)
         return (
-            <div className="Loading">
+            <div className="Goto">
                 <div className="textFrame">
                     <div className="title">Love You Forever</div>
                     <div className="text">
-                        {loading}
+                        {this.props.isLoading ? loading : error}
                     </div>
                 </div>
             </div>

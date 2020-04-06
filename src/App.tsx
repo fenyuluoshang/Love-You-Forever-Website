@@ -1,45 +1,17 @@
 import React from 'react';
 import { HashRouter, Switch, Redirect, Route } from 'react-router-dom'
-import LoadingComponent from './components/LoadingComponent';
+import RouteLoadingComponent from './components/RouteLoading';
 import Loadable from 'react-loadable';
-
-import bgImage from './assets/wallhaven-13m9z9-size1280.jpg'
 import './App.scss';
 
 const loadsh = function (loader: any) {
   return Loadable({
     loader,
-    loading: LoadingComponent
+    loading: RouteLoadingComponent
   });
 }
 
 class App extends React.Component {
-
-  state: {
-    doms: React.ReactElement[]
-  }
-
-  constructor(props: any) {
-    super(props)
-    this.state = {
-      doms: []
-    }
-    this.loadhome = this.loadhome.bind(this)
-  }
-
-  async loadhome() {
-    await new Promise((res, rej) => {
-      let imgdom = document.createElement('img')
-      imgdom.src = bgImage
-      imgdom.style.display = "none"
-      imgdom.addEventListener('load', () => {
-        res()
-        document.body.removeChild(imgdom)
-      })
-      document.body.appendChild(imgdom)
-    })
-    return await import('./view/HomeView')
-  }
 
   render() {
     return (
@@ -47,7 +19,7 @@ class App extends React.Component {
         <HashRouter>
           <Switch>
             <Redirect exact from="/" to="/home" />
-            <Route exact path="/home" component={loadsh(() => this.loadhome())} />
+            <Route name="home" exact path="/home" component={loadsh(() => import('./view/HomeView'))} />
             <Route exact path="/about" component={loadsh(() => import('./view/AboutView'))} />
             <Route exact path="/news" component={loadsh(() => import('./view/NewsView'))} />
             <Route exact path="/download" component={loadsh(() => import('./view/DownLoadView'))} />
@@ -55,7 +27,6 @@ class App extends React.Component {
             <Route exact path="/not_open" component={loadsh(() => import('./view/NotOpenView'))} />
           </Switch>
         </HashRouter>
-        {this.state.doms}
       </div>
     );
   }

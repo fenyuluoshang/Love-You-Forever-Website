@@ -27,6 +27,25 @@ a {
   }
 }
 
+.Goto {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-black;
+  min-height: 100vh;
+
+  .title {
+    font-size: 70px;
+    margin-bottom: 5vh;
+  }
+
+  .text {
+    font-size: 30px;
+  }
+}
+
 .Loading {
   display: flex;
   text-align: center;
@@ -46,6 +65,7 @@ a {
     font-size: 30px;
   }
 }
+
 
 @keyframes App-Loading-title-inner {
   0% {
